@@ -32,5 +32,9 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 RUN useradd -ms /bin/bash appuser && usermod -aG sudo appuser
 
+RUN a2enmod proxy \
+    && a2enmod proxy_http \
+    && service apache2 start
+
 # CMD apachectl -D FOREGROUND
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "reverse_proxy.wsgi"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "reverse_proxy.wsgi", "--timeout 90"]

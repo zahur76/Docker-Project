@@ -9,6 +9,6 @@ services:
     environment:
       - SECRET_KEY=${SECRET_KEY}
     ports:
-      - 80:8000
+      - 80:80
     volumes:
-      - ./webapp:/var/www/app #host:container
+      - ./webapp:/var/www/app
