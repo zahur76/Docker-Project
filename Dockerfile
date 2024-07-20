@@ -2,7 +2,6 @@
 FROM ubuntu
 
 USER root
-USER root
 RUN apt-get update
 RUN apt install -y python-is-python3 && apt-get install -y python3-pip virtualenv
 RUN apt-get install -y apache2 apache2-utils libapache2-mod-wsgi-py3
