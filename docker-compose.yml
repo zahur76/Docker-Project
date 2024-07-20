@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  webapp:
+    image: webapp
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+    ports:
+      - 80:8000
+    volumes:
+      - ./webapp:/var/www/app #host:container
