@@ -14,3 +14,4 @@ Create a minimal Django project and deploy using Docker + Apache2 reverse proxy 
 
 Notes:
 - Ensure .env file is created at project root with SECRET_KEY
+- If deploying on VPS stop apache2 service on host
