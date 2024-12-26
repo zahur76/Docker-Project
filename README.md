@@ -12,6 +12,10 @@ Create a minimal Django project and deploy using Docker + Apache2 reverse proxy 
 
     ```service apache2 reload```
 
+    ```sudo apache2ctl configtest```
+
+    ```tail -f /var/log/apache2/error.log```
+
 Notes:
 - Ensure .env file is created at project root with SECRET_KEY
 - If deploying on VPS stop apache2 service on host
